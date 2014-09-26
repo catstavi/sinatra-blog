@@ -1,15 +1,6 @@
-.header {
-  /*text-align: center;
-  border-bottom: 1em, dotted, black;
-  display: block;
-  color: #195AFF;
-  width: 100%;
-  text-align: left;
-  padding-left: 10%;
-  /*padding-right: 60%;*/
-  /*background-color: #5DE8C0;
-  position: fixed;*/
-    background-color: #f8f6f6;
+/*.header {
+
+    background-color: green;
     position: fixed;
     width: 100%;
     height: 4em;
@@ -18,7 +9,23 @@
     top: 0;
     left: 0;
     text-align: center
+}*/
 
+/*.header {
+  width: 100%;
+  height: 4em;
+  background: green;
+  text-align: right;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}*/
+
+.header {
+  margin: 0;
+  background: green;
+  padding: 1em;
+  border-bottom: .2em dashed darkgreen;
 }
 
 .clear {
@@ -26,22 +33,37 @@
 }
 
 .rightbar {
-  margin: 50px;
-  float: right;
+  position: absolute;
+	top: 3em;
+	margin-top: 0.5em;
+	right: 0;
+	width: 10em;
+  border-left: .2em dotted;
+  padding-left: .4em;
+  padding-right: .4em;
+  text-align: center
+
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover {
+  color: green
 }
 
 .aboutpic {
   float:left;
 }
 
-
-.navbar {
-  background-color: lightgreen;
-  width: 100px;
-  display: inline-block;
-  padding-top: 5%;
-  text-align: center
+img {
+  border:.10em solid black;
+  border-radius: 2%;
+  margin: 1em;
 }
+
+
 
 h3 div {
     background-color: lightgreen;
@@ -50,11 +72,17 @@ h3 div {
 }
 
 body {
+
+    background-color: lightblue;
+    margin: 0;
     font-family: arial, helvetica, sans-serif;
     font-size: 14px;
     color: darkgreen;
-    background-color: lightblue;
-    margin: 20px;
-    padding: 0;
-    clear: both;
+
 }
+
+.jar {
+  margin: 20px;
+  padding: 0;
+  clear: both;
+  }

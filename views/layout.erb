@@ -4,26 +4,30 @@
 </head>
 
 <div class = "header">
-  <h3>
-    <a href= "/about">WHO?</a>
-     <a href= "/blog">WHAT?</a>
-     <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
-   </h3>
+<%= "meow "*10 %>
 </div>
-<!-- <div class = "clear"></div>
-    <div class = "navbar">
-      <h4>ABOUT</h4>
-    </div>
-    <div class="navbar">
-      <h4>BLOG</h4>
-    </div> -->
-
-
 
 <div class="rightbar">
+  <h3>
+    <a href= "/about">WHO?</a>
+     <a href= "/">WHAT?</a>
+     <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
+   </h3>
     <% Post.all.each do |path| %>
         <a href= <%= path.url %> > <%=path.title%>  </a> <br>
     <%end%>
 </div>
 
-<%= yield %>
+
+<div class= "jar">
+  <!-- <div class = "clear"></div>
+      <div class = "navbar">
+        <h4>ABOUT</h4>
+      </div>
+      <div class="navbar">
+        <h4>BLOG</h4>
+      </div> -->
+
+
+  <%= yield %>
+</div>
