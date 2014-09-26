@@ -1,0 +1,60 @@
+.header {
+  /*text-align: center;
+  border-bottom: 1em, dotted, black;
+  display: block;
+  color: #195AFF;
+  width: 100%;
+  text-align: left;
+  padding-left: 10%;
+  /*padding-right: 60%;*/
+  /*background-color: #5DE8C0;
+  position: fixed;*/
+    background-color: #f8f6f6;
+    position: fixed;
+    width: 100%;
+    height: 4em;
+    opacity: 0.7;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    text-align: center
+
+}
+
+.clear {
+  clear: both;
+}
+
+.rightbar {
+  margin: 50px;
+  float: right;
+}
+
+.aboutpic {
+  float:left;
+}
+
+
+.navbar {
+  background-color: lightgreen;
+  width: 100px;
+  display: inline-block;
+  padding-top: 5%;
+  text-align: center
+}
+
+h3 div {
+    background-color: lightgreen;
+    width: 50em;
+    height: 50em;
+}
+
+body {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+    color: darkgreen;
+    background-color: lightblue;
+    margin: 20px;
+    padding: 0;
+    clear: both;
+}
