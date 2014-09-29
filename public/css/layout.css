@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <link type="text/css" rel= "stylesheet" href= "/style.css" />
   <script src= "/app.js"></script>
@@ -10,12 +12,16 @@
 <div class="rightbar">
   <h3>
     <a href= "/about">WHO?</a>
-     <a href= "/">WHAT?</a>
-     <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
-   </h3>
-    <% Post.most_recent_list.each do |path| %>
-        <a href= <%= path.url %> > <%=path.title%>  </a> <br>
-    <%end%>
+    <a href= "/">WHAT?</a>
+    <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
+  </h3>
+   <ul>
+     <% Post.most_recent_list.each do |path| %>
+         <li>
+           <a href= <%= path.url %> > <%=path.title%>  </a>
+         </li>
+     <%end%>
+   </ul>
 </div>
 
 
@@ -31,3 +37,4 @@
 
   <%= yield %>
 </div>
+</html>
