@@ -13,7 +13,7 @@
      <a href= "/">WHAT?</a>
      <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
    </h3>
-    <% Post.all.each do |path| %>
+    <% Post.most_recent_list.each do |path| %>
         <a href= <%= path.url %> > <%=path.title%>  </a> <br>
     <%end%>
 </div>

@@ -1,5 +1,6 @@
 require 'sinatra'
 require './lib/post'
+require 'date'
 
 class MyBlog < Sinatra::Base
 
@@ -11,17 +12,17 @@ class MyBlog < Sinatra::Base
   #   erb :contact
   # end
   #
-  get "/blog" do
-    erb :blog
-  end
 
   get "/about" do
     erb :about
   end
+  #
+  # get "/posts/post1" do
+  #   erb :"/posts/2014-09-28/post1"
+  # end
 
-  get "/posts/:filename" do
-    filename = params[:filename]
-    erb :"/posts/#{filename}"
+  get "/posts/*/*" do |date, name|
+    erb :"/posts/#{date}/#{name}"
   end
 
 end

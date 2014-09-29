@@ -1,14 +1,14 @@
 class Post
-  attr_accessor :title, :url, :path
+  attr_reader :title, :url, :path, :date
 
   def initialize(path)
     @path = path
     set_url
-    @title = format_title(@url)
+    @title = format_title(@path)
   end
 
   def self.all
-    Dir["./views/posts/**.erb"].collect do |path|
+    Dir["./views/posts/**/**.erb"].collect do |path|
       Post.new(path)
     end
   end
@@ -17,8 +17,12 @@ class Post
     @url = @path[7..-5]
   end
 
+  def set_date
+    @date = DateTime.parse(@path[14..23])
+  end
+
   def format_title(path)
-    title=path.slice(7..-1)
+    title=path[25..-5]
     title.capitalize!
     title.gsub("-"," ")
   end
@@ -26,4 +30,10 @@ class Post
   def read_file
     File.read(@path)
   end
+
+  def self.most_recent_list
+    date_sorted = all.sort_by { |post| post.date }
+    date_sorted.reverse
+  end
+
 end
