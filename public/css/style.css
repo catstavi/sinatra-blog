@@ -1,95 +1,93 @@
-/*.header {
-
-    background-color: green;
-    position: fixed;
-    width: 100%;
-    height: 4em;
-    opacity: 0.7;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    text-align: center
-}*/
-
-/*.header {
-  width: 100%;
-  height: 4em;
-  background: green;
-  text-align: right;
-  z-index: 1;
-  top: 0;
-  left: 0;
-}*/
-
-.header {
-  margin: 0;
-  background: green;
-  padding: 1em;
-  border-bottom: .2em dashed darkgreen;
-}
-
-.clear {
-  clear: both;
-}
-
 .rightbar {
-	top: 3em;
+	top: 0;
 	margin-top: 0.5em;
 	right: 0;
-	width: 10em;
-  border-left: .2em dashed;
+	width: 13em;
+  border-left: .2em dashed #01E883;
   margin-top: 0em;
   padding-left: .4em;
   padding-right: .4em;
   padding-bottom: 100%;
   text-align: center;
   float: right;
-  background-color:rgba(0,200,10,0.5);
+  background-color:rgba(13,255,53,0.5);
+  position: fixed
+}
 
+.rightbar li {
+  list-style: none;
+  padding: .3em;
+  padding-right: 2em;
+}
 
-
+h2 {
+  color: #224F45
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
+  color: #006B53;
+}
+
+a:visited {
+  color: #224F45;
 }
 
 a:hover {
-  color: green
+  color: #4CB09A;
 }
 
 .aboutpic {
-  float:left;
+  float: left;
 }
 
 img {
-  border:.10em solid black;
   border-radius: 2%;
-  margin: 1em;
+  margin: 2em;
 }
 
+h3 {
+  color: #004F34;
 
-
-h3 div {
-    background-color: lightgreen;
-    width: 50em;
-    height: 50em;
 }
 
-body {
+.links li {
+  display: inline;
+}
 
-    background-color: lightblue;
+.links {
+  list-style: none;
+}
+
+/*.bpost {
+  border: .1em dotted;
+  margin: 2em;
+  padding-left: 3em;
+  padding-right: 3em;
+  background-color:rgba(0,181,121,.4);
+  border-radius: 2%;
+}*/
+
+
+body,html {
+    background-color: #47ECB5;
     margin: 0;
-    font-family: arial, helvetica, sans-serif;
+    font-family: 'Quattrocento', helvetica, sans-serif;
     font-size: 14px;
-    color: darkgreen;
-
+    color: #062770;
+    /*min-height: 100%;*/
 }
 
 .jar {
-  margin: 2em;
-  padding-right: 20em;
+  margin-right: 20em;
+  margin-left: 5em;
+  margin-top: 0;
   padding-left: 5em;
-  /*float: left;*/
-  /*clear: both;*/
+  padding-right: 5em;
+  padding-top: 1em;
+  background-color: #B9FFEF;
+  border-left: .1em solid #0DFF36;
+  border-right: .1em solid #0DFF36;
+  min-height: 100vh;
+
   }

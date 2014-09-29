@@ -5,7 +5,7 @@ class Post
     @path = path
     set_date
     set_url
-    @title = format_title(@path)
+    @title = get_title
   end
 
   def self.all
@@ -30,6 +30,11 @@ class Post
     title=path[25..-5]
     title.capitalize!
     title.gsub("-"," ")
+  end
+
+  def get_title
+    title=File.open(@path, &:readline)
+    title.gsub(/<\S{2,3}>/, "")
   end
 
   def read_file

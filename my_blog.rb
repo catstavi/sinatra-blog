@@ -1,6 +1,7 @@
 require 'sinatra'
-require './lib/post'
 require 'date'
+require './lib/post'
+
 
 class MyBlog < Sinatra::Base
 

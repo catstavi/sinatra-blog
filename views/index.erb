@@ -1,7 +1,10 @@
 <body>
-<h2> A Blog, Of Course </h2>
+    <h2> A Blog, Of Course </h2>
+
 <% Post.most_recent_list.each do |post| %>
-  <%=  post.read_file %>
-  <br>
+  <div class="bpost">
+    <%=  post.read_file %>
+    <br>
+  </div>
   <%  end %>
 </body>
