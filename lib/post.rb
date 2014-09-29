@@ -23,7 +23,7 @@ class Post
   end
 
   def display_date
-    @date
+    "Day #{@date.day}, Month #{@date.month}, Year #{@date.year}"
   end
 
   def format_title(path)
