@@ -1,7 +1,8 @@
 <body>
 <h2> A Blog, Of Course </h2>
-<% Post.most_recent_list.each do |post| %>
-  <%=  post.read_file %>
+<% Post.all.each do |post| %>
+  <%= post.display_date %>
+  <!-- <%=  post.read_file %> -->
   <br>
   <%  end %>
 </body>

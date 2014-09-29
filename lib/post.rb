@@ -3,6 +3,7 @@ class Post
 
   def initialize(path)
     @path = path
+    set_date
     set_url
     @title = format_title(@path)
   end
@@ -19,6 +20,10 @@ class Post
 
   def set_date
     @date = DateTime.parse(@path[14..23])
+  end
+
+  def display_date
+    @date
   end
 
   def format_title(path)
