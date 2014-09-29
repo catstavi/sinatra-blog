@@ -1,11 +1,7 @@
 <body>
-<h2>A Blog </h2>
-<h4> Post Title </h4>
-  <p>
-    I've had twelve years to think about it. And if I had it to do over again, I would have grabbed the phaser and pointed it at you instead of them. Could someone survive inside a transporter buffer for 75 years? You enjoyed that. You're going to be an interesting companion, Mr. Data. Why don't we just give everybody a promotion and call it a night - 'Commander'? You bet I'm agitated! I may be surrounded by insanity, but I am not insane. The Federation's gone; the Borg is everywhere! Yes, absolutely, I do indeed concur, wholeheartedly! I'll be sure to note that in my log. For an android with no feelings, he sure managed to evoke them in others. Is it my imagination, or have tempers become a little frayed on the ship lately? Not if I weaken first. Fear is the true enemy, the only enemy. The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules. Travel time to the nearest starbase? My oath is between Captain Kargan and myself. Your only concern is with how you obey my orders. Or do you prefer the rank of prisoner to that of lieutenant? Fate. It protects fools, little children, and ships named "Enterprise." Flair is what marks the difference between artistry and mere competence.
-  </p>
-<h4> Post Title 2 </h4>
-  <p>
-    Helvetica retro pug bespoke vegan Wes Anderson. Chia polaroid Helvetica, Wes Anderson High Life chambray fixie shabby chic trust fund master cleanse nesciunt esse officia. Pinterest street art flexitarian culpa meggings before they sold out Truffaut bespoke viral nostrud authentic. Pork belly polaroid qui, flexitarian tofu American Apparel ut organic cillum iPhone Banksy Intelligentsia semiotics velit cornhole. Sartorial direct trade vegan, lo-fi ennui YOLO viral. Vegan forage McSweeney's dolore, viral art party 8-bit eiusmod mustache sunt gastropub gluten-free hashtag umami. Dolor pickled irure lomo.
-  </p>
+<h2> A Blog, Of Course </h2>
+<% Post.all.collect do |post| %>
+  <%=  post.read_file %>
+  <br>
+  <%  end %>
 </body>

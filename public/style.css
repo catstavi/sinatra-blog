@@ -33,15 +33,20 @@
 }
 
 .rightbar {
-  position: absolute;
 	top: 3em;
 	margin-top: 0.5em;
 	right: 0;
 	width: 10em;
-  border-left: .2em dotted;
+  border-left: .2em dashed;
+  margin-top: 0em;
   padding-left: .4em;
   padding-right: .4em;
-  text-align: center
+  padding-bottom: 100%;
+  text-align: center;
+  float: right;
+  background-color:rgba(0,200,10,0.5);
+
+
 
 }
 
@@ -82,7 +87,9 @@ body {
 }
 
 .jar {
-  margin: 20px;
-  padding: 0;
-  clear: both;
+  margin: 2em;
+  padding-right: 20em;
+  padding-left: 5em;
+  /*float: left;*/
+  /*clear: both;*/
   }
