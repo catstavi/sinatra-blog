@@ -22,9 +22,9 @@ class Post
     @date = DateTime.parse(@path[14..23])
   end
 
-  def display_date
-    "Day #{@date.day}, Month #{@date.month}, Year #{@date.year}"
-  end
+  # def display_date
+  #   "Day #{@date.day}, Month #{@date.month}, Year #{@date.year}"
+  # end
 
   def format_title(path)
     title=path[25..-5]
