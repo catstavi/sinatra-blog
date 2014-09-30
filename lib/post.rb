@@ -25,18 +25,19 @@ class Post
   # def display_date
   #   "Day #{@date.day}, Month #{@date.month}, Year #{@date.year}"
   # end
-
-  def format_title(path)
-    title=path[25..-5]
-    title.capitalize!
-    title.gsub("-"," ")
-  end
+  #
+  # def format_title(path)
+  #   title=path[25..-5]
+  #   title.capitalize!
+  #   title.gsub("-"," ")
+  # end
 
   def get_title
     file=File.open(@path)
     file.each do |line|
       if line.include? "\"title\""
-        return clean_title(line)
+        clean_title(line)
+        return line
       end
     end
   end
