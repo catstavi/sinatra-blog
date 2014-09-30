@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link type = "text/css" rel= "stylesheet" href = "css/resets.css" />
+    <link type = "text/css" rel= "stylesheet" href = "/css/resets.css" />
     <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
     <link type="text/css" rel= "stylesheet" href= "/css/style.css" />
     <script src= "/app.js"></script>
@@ -14,11 +14,11 @@
   </header>
 
   <aside>
-    <h3>
+    <h2>
       <a href= "/about">WHO?</a>
       <a href= "/">WHAT?</a>
       <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
-    </h3>
+    </h2>
      <ul class ="bloglist">
        <% Post.most_recent_list.each do |path| %>
            <li>
@@ -28,11 +28,10 @@
      </ul> <!-- bloglist -->
   </aside>
 
+  <section class = "page-content">
 
-    <section>
-
-      <%= yield %>
-    </section>
+    <%= yield %>
+  </section>
 
   </body>
 </html>
