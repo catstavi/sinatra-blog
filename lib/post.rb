@@ -33,9 +33,22 @@ class Post
   end
 
   def get_title
-    title=File.open(@path, &:readline)
-    title.gsub(/<\S{2,3}>/, "")
+    file=File.open(@path)
+    file.each do |line|
+      if line.include? "\"title\""
+        return clean_title(line)
+      end
+    end
   end
+
+  def clean_title(line)
+    line.gsub!(/<\S{2,3}>?/, "")
+    line.gsub!(/>/,"")
+    line.gsub!(/\n/, "")
+    line.gsub!(/class ?= ?"title"/, "")
+    line.gsub!(/^ +/,"")
+  end
+
 
   def read_file
     File.read(@path)
@@ -44,6 +57,10 @@ class Post
   def self.most_recent_list
     date_sorted = all.sort_by { |post| post.date }
     date_sorted.reverse
+  end
+
+  def self.most_recent(n)
+    most_recent_list[0...n]
   end
 
 end

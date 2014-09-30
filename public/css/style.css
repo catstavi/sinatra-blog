@@ -1,20 +1,33 @@
-.rightbar {
+aside {
 	top: 0;
-	margin-top: 0.5em;
 	right: 0;
-	width: 13em;
-  border-left: .2em dashed #01E883;
-  margin-top: 0em;
-  padding-left: .4em;
-  padding-right: .4em;
-  padding-bottom: 100%;
+	width: 25vw;
+	height: 100%;
   text-align: center;
   float: right;
-  background-color:rgba(13,255,53,0.5);
+  background-color:rgba(120,150,155,0.5);
   position: fixed
 }
 
-.rightbar li {
+header {
+	margin: 0;
+	width: 100%;
+	height: 30vh;
+	background-image:
+			url(http://placekitten.com/g/1400/250);
+	background-size: cover;
+}
+
+section {
+	border-top: .5em solid rgba(10,10,10,.5);
+	padding-top: 5vh;
+	padding-left: 15vw;
+	padding-right: 35vw;
+	background-color: rgba(207,255,235,1);
+	min-height: 100vh;
+}
+
+aside li {
   list-style: none;
   padding: .3em;
   padding-right: 2em;
@@ -69,15 +82,15 @@ h3 {
 }*/
 
 
-body,html {
+/*body,html {
     background-color: #47ECB5;
     margin: 0;
     font-family: 'Quattrocento', helvetica, sans-serif;
     font-size: 14px;
     color: #062770;
-    /*min-height: 100%;*/
-}
-
+    min-height: 100%;
+}*/
+/*
 .jar {
   margin-right: 20em;
   margin-left: 5em;
@@ -90,4 +103,4 @@ body,html {
   border-right: .1em solid #0DFF36;
   min-height: 100vh;
 
-  }
+  }*/

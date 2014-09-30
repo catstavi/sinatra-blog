@@ -14,6 +14,10 @@ class MyBlog < Sinatra::Base
   # end
   #
 
+  get "/next" do
+    erb :next
+  end
+  
   get "/about" do
     erb :about
   end

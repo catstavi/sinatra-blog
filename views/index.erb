@@ -1,10 +1,12 @@
 <body>
     <h2> A Blog, Of Course </h2>
-
-<% Post.most_recent_list.each do |post| %>
+<% Post.most_recent(5).each do |post| %>
   <div class="bpost">
     <%=  post.read_file %>
     <br>
   </div>
   <%  end %>
+  <div class = pagination>
+    <a href="/next">more</a>
+  </div>
 </body>

@@ -1,0 +1,5 @@
+<body>
+  <% n = 5 %>
+  <% Posts.most_recent_list[n...n+5].each do |post| %>
+  <%= post.read_file %>
+</body>

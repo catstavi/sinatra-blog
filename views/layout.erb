@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link type = "text/css" rel= "stylesheet" href = "css/resets.css" />
     <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
     <link type="text/css" rel= "stylesheet" href= "/css/style.css" />
     <script src= "/app.js"></script>
   </head>
 
-  <!-- <div class = "header">
-  <%= "meow "*10 %>
-  </div> -->
+  <body>
 
-  <div class="rightbar">
+  <header>
+    <%= "meow "*10 %>
+  </header>
+
+  <aside>
     <h3>
       <a href= "/about">WHO?</a>
       <a href= "/">WHAT?</a>
       <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
     </h3>
-     <ul>
+     <ul class ="bloglist">
        <% Post.most_recent_list.each do |path| %>
            <li>
              <a href= <%= path.url %> > <%=path.title%>  </a>
            </li>
        <%end%>
-     </ul>
-  </div>
+     </ul> <!-- bloglist -->
+  </aside>
 
 
-  <div class= "jar">
+    <section>
 
-    <%= yield %>
-  </div>
+      <%= yield %>
+    </section>
+
+  </body>
 </html>
