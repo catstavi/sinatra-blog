@@ -1,11 +1,13 @@
 <body>
-    <h2> A Blog, Of Course </h2>
+    <h2 class = "blog-title"> A Blog, Of Course </h2>
+    
 <% Post.most_recent(5).each do |post| %>
-  <div class="bpost">
+  <article>
     <%=  post.read_file %>
     <br>
-  </div>
+  </article>
   <%  end %>
+
   <div class = pagination>
     <a href="/next">more</a>
   </div>

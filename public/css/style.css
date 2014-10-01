@@ -2,19 +2,32 @@ body {
 	margin: 0;
 	font-family: 'Quattrocento', helvetica, sans-serif;
 	font-size: 1em;
+	min-height: 100vh;
+	background-color: rgba(207,255,235,1);
+	position: relative;
+	/*height: 3000px;
+	top: 0;*/
+}
 
+#scroller {
+    position: relative;
+    top: 0;
+    /*width: 100%;*/
+    /*background: #CCC;
+    height: 100px;*/
 }
 
 aside {
-	top: 0;
+	/*top: 0;*/
 	right: 0;
 	width: 25vw;
 	height: 100vh;
   text-align: center;
   float: right;
-  background-color:rgba(120,150,155,0.5);
-  position: fixed;
+  background-color: rgba(120,150,155,0.4);
+  /*position: fixed;*/
 	padding-top: 2em;
+	border-left: .5em solid rgba(120,150,155,0.05)
 }
 
 aside a {
@@ -22,13 +35,20 @@ aside a {
 }
 
 aside a:visited {
-	color: #4CB09A
+	color: #4CB09A;
 }
 
 aside a:hover {
 	color: #235247;
 }
 
+aside li {
+	list-style: none;
+	padding: .3em;
+	/*padding-right: 2em;*/
+	text-align: center;
+	font-size: 1.07em;
+}
 
 header {
 	margin: 0;
@@ -37,42 +57,51 @@ header {
 	background-image:
 			url(http://placekitten.com/g/1400/250);
 	background-size: cover;
-	/*border-bottom: 5em solid rgba(200,200,200, .9)*/
+	/*display: none;*/
 }
 
 section {
 	border-top: .5em solid rgba(10,10,10,.5);
 	padding-top: 5vh;
 	padding-bottom: 5vh;
-	padding-left: 15vw;
-	padding-right: 35vw;
-	background-color: rgba(207,255,235,1);
-	min-height: 100vh;
 }
 
-aside li {
-  list-style: none;
-  padding: .3em;
-  padding-right: 2em;
+.about-text {
+	margin-top: 10vh;
+	margin-right: 30vw;
+}
+
+.about-pic {
+	float: left;
+	border-radius: 2%;
+	margin: 2em;
+}
+
+.blog-title {
+	padding-left: 18vw;
+}
+
+.bpost {
+	padding-left: 15vw;
+	padding-right: 35vw;
 }
 
 h2 {
   color: #023D2D;
 	font-size: 2em;
-	padding-bottom: 5vh;
-
+	padding: 3vh;
 }
 
 h3 {
 	color: #034C39;
 	font-size: 1.3em;
-	padding-bottom: 1em;
+	padding: 2vh;
 }
 
 h3 + p {
 	color: #034C39;
 	font-size: 1.1em;
-	padding: .5em;
+	padding: 1vh;
 }
 
 p {
@@ -81,7 +110,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #006B53;
+  color: #224F45;
 }
 
 a:visited {
@@ -92,15 +121,6 @@ a:hover {
   color: #4CB09A;
 }
 
-.aboutpic {
-  float: left;
-}
-
-img {
-  border-radius: 2%;
-  margin: 2em;
-}
-
 .links li {
   display: inline;
 }
@@ -108,28 +128,3 @@ img {
 .links {
   list-style: none;
 }
-
-/*.bpost {
-  border: .1em dotted;
-  margin: 2em;
-  padding-left: 3em;
-  padding-right: 3em;
-  background-color:rgba(0,181,121,.4);
-  border-radius: 2%;
-}*/
-
-
-/*
-.jar {
-  margin-right: 20em;
-  margin-left: 5em;
-  margin-top: 0;
-  padding-left: 5em;
-  padding-right: 5em;
-  padding-top: 1em;
-  background-color: #B9FFEF;
-  border-left: .1em solid #0DFF36;
-  border-right: .1em solid #0DFF36;
-  min-height: 100vh;
-
-  }*/
