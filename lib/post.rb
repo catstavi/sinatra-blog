@@ -50,6 +50,8 @@ class Post
     line.gsub!(/^ +/,"")
   end
 
+  def
+
 
   def read_file
     File.read(@path)
