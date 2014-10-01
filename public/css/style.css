@@ -4,28 +4,23 @@ body {
 	font-size: 1em;
 	min-height: 100vh;
 	background-color: rgba(207,255,235,1);
-	position: relative;
-	/*height: 3000px;
-	top: 0;*/
 }
-
+/*
 #scroller {
     position: relative;
     top: 0;
-    /*width: 100%;*/
-    /*background: #CCC;
-    height: 100px;*/
-}
+    height: 100px;
+} */
 
 aside {
-	/*top: 0;*/
+	top: 0;
 	right: 0;
 	width: 25vw;
 	height: 100vh;
   text-align: center;
   float: right;
   background-color: rgba(120,150,155,0.4);
-  /*position: fixed;*/
+  position: fixed;
 	padding-top: 2em;
 	border-left: .5em solid rgba(120,150,155,0.05)
 }
