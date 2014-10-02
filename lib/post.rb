@@ -1,11 +1,12 @@
 class Post
-  attr_reader :title, :url, :path, :date
+  attr_reader :title, :url, :path, :date, :name
   POSTS_PER_PAGE = 2
 
   def initialize(path)
     @path = path
     set_date
     set_url
+    set_name
     @title = get_title
   end
 
@@ -23,6 +24,9 @@ class Post
     @date = DateTime.parse(@path[14..23])
   end
 
+  def set_name
+    @name = @path[25..-5]
+  end
 
   def get_title
     file=File.open(@path)
@@ -48,11 +52,30 @@ class Post
 
   def self.most_recent_list
     date_sorted = all.sort_by { |post| post.date }
-    date_sorted.reverse
+    @@date_sorted_list ||= date_sorted.reverse
   end
 
   def self.most_recent(n)
     most_recent_list[0...n]
+  end
+
+  def self.get_post_index(name)
+    post_obj = most_recent_list.detect { |po| name == po.name}
+    most_recent_list.find_index(post_obj)
+  end
+
+  def self.get_next(post_name)
+    index = get_post_index(post_name)
+    most_recent_list[index+1]
+  end
+
+  def self.get_prev(post_name)
+    index = get_post_index(post_name)
+    if index == 0
+      nil
+    else
+      most_recent_list[index-1]
+    end
   end
 
   def self.paged_posts

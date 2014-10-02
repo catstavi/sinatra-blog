@@ -13,4 +13,13 @@ describe Post do
       expect(post.get_title).to eq "Earliest Test Post"
     end
   end
+
+  describe "#self.get_post_index" do
+    context "when given a post title string" do
+      it 'returns a post obj' do
+        expect(Post.get_post_index("post1")).to be_instance_of Fixnum
+      end
+    end
+  end
+
 end

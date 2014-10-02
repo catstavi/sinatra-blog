@@ -31,7 +31,19 @@
     <%= yield %>
   </section>
 
+  <!-- I want this footer to check if @next_post is found, and only display if it is
+  but not throw an error about undefined variables if it doesn't exist-->
+  <% if defined? @next_post %>
+    <% if @prev_post != nil %>
+      <a class= "back-page" href= <%= @prev_post.url %> > &#x219c; </a>
+    <% end %>
+    <% if @next_post != nil %>
+      <a class= "next-page" href= <%= @next_post.url %> > &#x219d; </a>
+    <% end %>
+  <% end %>
+
+
+    <script src="/javascripts/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src= "javascripts/app.js"></script>
   </body>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-  <script src= "/app.js"></script>
 </html>
