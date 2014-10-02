@@ -25,7 +25,7 @@ aside {
   float: right;
   background-color: rgba(120,150,155,0.4);
   position: fixed;
-	border-left: .5em solid rgba(120,150,155,0.05)
+	border-left: .5em solid rgba(120,150,155,0.05);
 }
 
 #questions {
@@ -55,7 +55,6 @@ aside li {
 	list-style: none;
 	top: 32vh;
 	padding: .3em;
-	/*padding-right: 2em;*/
 	text-align: center;
 	font-size: 1.07em;
 }
@@ -64,6 +63,10 @@ section {
 	border-top: .5em solid rgba(10,10,10,.5);
 	padding-top: 5vh;
 	padding-bottom: 5vh;
+}
+
+.arrows {
+	border: none;
 }
 
 .about-text {
@@ -146,7 +149,6 @@ a:hover {
 	margin-bottom: .7em;
 	float: right;
 	font-size: 3em;
-	position: inline-block;
 }
 
 .back-page {
@@ -154,8 +156,6 @@ a:hover {
 	margin-left: 10vw;
 	margin-bottom: .7em;
 	font-size: 3em;
-	position: inline-block;
-
 }
 
 #notfound {

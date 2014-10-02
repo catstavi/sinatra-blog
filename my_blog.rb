@@ -32,8 +32,6 @@ class MyBlog < Sinatra::Base
     # then pass the next one and get date/title for the link
     @next_post = Post.get_next(name)
     @prev_post = Post.get_prev(name)
-    # @next = "#{@prev_post.date.to_s} / #{@prev_post.name}"
-    # @prev_post = "/#{@prev_post.date.to_s}/#{@prev_post.name}"
     erb :"/posts/#{date}/#{name}"
   end
 

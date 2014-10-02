@@ -11,28 +11,25 @@
   <header>
     <%= "meow "*10 %>
   </header>
-    <aside id ="scroller">
-      <h2 id = "questions">
-        <a href= "/about">WHO?</a>
-        <a href= "/">WHAT?</a>
-        <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
-      </h2>
-       <ul class ="bloglist">
-         <% Post.most_recent_list.each do |path| %>
-             <li>
-               <a href= <%= path.url %> > <%=path.title%>  </a>
-             </li>
-         <%end%>
-       </ul> <!-- bloglist -->
-    </aside>
+
+  <aside id ="scroller">
+    <h2 id = "questions">
+      <a href= "/about">WHO?</a>
+      <a href= "/">WHAT?</a>
+      <a href="http://meow-sinatra.herokuapp.com">WHY?</a>
+    </h2>
+     <ul class ="bloglist">
+       <% Post.most_recent_list.each do |path| %>
+           <li> <a href= <%= path.url %> > <%=path.title%>  </a> </li>
+       <%end%>
+     </ul> <!-- bloglist -->
+  </aside>
 
   <section class = "page-content">
-
     <%= yield %>
   </section>
 
-  <!-- I want this footer to check if @next_post is found, and only display if it is
-  but not throw an error about undefined variables if it doesn't exist-->
+  <!--Displays only if on an individual post page-->
   <% if defined? @next_post %>
     <% if @prev_post != nil %>
       <a class= "back-page" href= <%= @prev_post.url %> > &#x219c; </a>

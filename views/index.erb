@@ -1,11 +1,11 @@
 <body>
-    <h2 class = "blog-title"> A Blog, Of Course </h2>
+  <h2 class = "blog-title"> A Blog, Of Course </h2>
 
-<% @posts.each do |post| %>
-  <article>
-    <%=  post.read_file %>
-    <br>
-  </article>
+  <% @posts.each do |post| %>
+    <article>
+      <%=  post.read_file %>
+      <br>
+    </article>
   <%  end %>
 
   <a class= "next-page" href="/posts/2">&#x219d;</a>

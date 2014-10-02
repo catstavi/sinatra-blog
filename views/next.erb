@@ -1,12 +1,15 @@
 <body>
-  <% n = 5 %>
   <% @posts.each do |post| %>
-  <%= post.read_file %>
+    <%= post.read_file %>
   <% end %>
-  <a class= "back-page" href= <%= @back_link %> > &#x219c; </a>
-  <% if @next_check != nil %>
-    <a class= "next-page" href= <%= @next_link %> > &#x219d; </a>
-  <% else %>
-    <a class= "next-page" href= "/about"> &hearts; </a>
-  <% end %>
+
+  <section class= "arrows">
+    <a class= "back-page" href= <%= @back_link %> > &#x219c; </a>
+    <% if @next_check != nil %>
+      <a class= "next-page" href= <%= @next_link %> > &#x219d; </a>
+    <% else %>
+      <a class= "next-page" href= "/about"> &hearts; </a>
+    <% end %>
+  </section>
+  
 </body>
