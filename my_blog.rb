@@ -10,15 +10,16 @@ class MyBlog < Sinatra::Base
     erb :index
   end
 
-  get "posts/0" do
-    redirect to "/"
+  get "/posts/1" do
+    redirect to("/")
   end
 
   get "/posts/:num" do
     num = params[:num].to_i
-    @next_link = num+1
-    @back_link = num-1
     @posts = Post.paged_posts[num-1]
+    @next_check = Post.paged_posts[num]
+    @back_link = num-1
+    @next_link = num+1
     erb :next
   end
 
@@ -30,8 +31,8 @@ class MyBlog < Sinatra::Base
     erb :"/posts/#{date}/#{name}"
   end
 
-  get "/0" do
-    redirect to "/"
+  get "/*" do
+    erb :notfound, layout: false
   end
 
 end

@@ -3,12 +3,12 @@ body {
 	font-family: 'Quattrocento', helvetica, sans-serif;
 	font-size: 1em;
 	min-height: 100vh;
-	background-color: rgba(207,255,235,1);
+	background-color: rgb(207,255,235);
 }
 
 header {
 	margin: 0;
-	width: 100%;
+	width: 100vw;
 	height: 30vh;
 	background-image:
 			url(http://placekitten.com/g/1400/250);
@@ -67,14 +67,25 @@ section {
 }
 
 .about-text {
-	margin-top: 10vh;
-	margin-right: 30vw;
+	padding-top: 7vh;
+	padding-right: 30vw;
+	padding-left: 6vw;
 }
 
 .about-pic {
 	float: left;
+	margin-left: 6vw;
+	margin-right: 5vw;
+	margin-bottom: 3em;
+	margin-top: 9vh;
+	height: 90vh;
+	width: 75vh;
+	background-image: url("http://placekitten.com/g/500/600");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	border-radius: 2%;
-	margin: 2em;
+
 }
 
 .blog-title {
@@ -131,8 +142,22 @@ a:hover {
 
 .next-page {
 	text-align: right;
-	margin-right: 30vw;
+	margin-right: 33vw;
 	margin-bottom: .7em;
 	float: right;
-	font-size: 2em;
+	font-size: 3em;
+	position: inline-block;
+}
+
+.back-page {
+	text-align: left;
+	margin-left: 10vw;
+	margin-bottom: .7em;
+	font-size: 3em;
+	position: inline-block;
+
+}
+
+#notfound {
+	padding: 15em;
 }
