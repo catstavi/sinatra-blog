@@ -3,6 +3,6 @@
   <% @posts.each do |post| %>
   <%= post.read_file %>
   <% end %>
-
-  <a class= "next-page" href="/next/1">more</a>
+  <a class- "back-page" href= <%= @back_link %> >back</a>
+  <a class= "next-page" href= <%= @next_link %> >more</a>
 </body>
