@@ -1,5 +1,8 @@
 <body>
   <% n = 5 %>
-  <% Posts.most_recent_list[n...n+5].each do |post| %>
+  <% @posts.each do |post| %>
   <%= post.read_file %>
+  <% end %>
+
+  <a class= "next-page" href="/next/1">more</a>
 </body>

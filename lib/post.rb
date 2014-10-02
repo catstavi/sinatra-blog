@@ -1,5 +1,6 @@
 class Post
   attr_reader :title, :url, :path, :date
+  POSTS_PER_PAGE = 2
 
   def initialize(path)
     @path = path
@@ -50,9 +51,6 @@ class Post
     line.gsub!(/^ +/,"")
   end
 
-  def
-
-
   def read_file
     File.read(@path)
   end
@@ -64,6 +62,10 @@ class Post
 
   def self.most_recent(n)
     most_recent_list[0...n]
+  end
+
+  def self.paged_posts
+    self.most_recent_list.each_slice(POSTS_PER_PAGE).to_a
   end
 
 end

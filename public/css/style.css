@@ -1,3 +1,11 @@
+.next-page {
+	text-align: right;
+	margin-right: 30vw;
+	margin-bottom: .7em;
+	float: right;
+	font-size: 2em;
+}
+
 body {
 	margin: 0;
 	font-family: 'Quattrocento', helvetica, sans-serif;
