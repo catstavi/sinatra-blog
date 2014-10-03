@@ -1,9 +1,12 @@
 <body>
   <h2 class = "blog-title"> A Blog, Of Course </h2>
 
+
+<!--let's change the read_file -->
   <% @posts.each do |post| %>
     <article>
-      <%=  post.read_file %>
+      <!-- <%= erb post.url.to_sym %> -->
+      <%=  post.read_file_intro %>
       <br>
     </article>
   <%  end %>

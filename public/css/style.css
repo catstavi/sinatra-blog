@@ -13,7 +13,6 @@ header {
 	background-image:
 			url(http://placekitten.com/g/1400/250);
 	background-size: cover;
-	/*display: none;*/
 }
 
 aside {
@@ -112,10 +111,11 @@ h3 {
 	padding: 2vh;
 }
 
-h3 + p {
+h4 {
 	color: #034C39;
 	font-size: 1.1em;
 	padding: 1vh;
+	padding-bottom: 1em
 }
 
 p {

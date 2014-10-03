@@ -1,6 +1,9 @@
 <body>
   <% @posts.each do |post| %>
-    <%= post.read_file %>
+    <article>
+    <%= post.read_file_intro %>
+    <br>
+    </article>
   <% end %>
 
   <section class= "arrows">
@@ -11,5 +14,5 @@
       <a class= "next-page" href= "/about"> &hearts; </a>
     <% end %>
   </section>
-  
+
 </body>

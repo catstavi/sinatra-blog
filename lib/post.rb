@@ -46,6 +46,17 @@ class Post
     line.gsub!(/^ +/,"")
   end
 
+  def read_file_intro
+    lines = ""
+    file = File.open(@path)
+    file.collect do |line|
+      lines += line
+      if line.include? "</p>"
+        return lines
+      end
+    end
+  end
+
   def read_file
     File.read(@path)
   end
