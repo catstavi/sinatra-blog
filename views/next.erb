@@ -1,7 +1,9 @@
 <body>
   <% @posts.each do |post| %>
     <article>
-    <%= post.read_file_intro %>
+    <!-- <%= post.read_file_intro %> -->
+    <%= erb post.url.to_sym %>
+    <a class = 'show-options'>&#x21a7;</a>
     <br>
     </article>
   <% end %>

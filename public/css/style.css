@@ -65,6 +65,7 @@ section {
 }
 
 .arrows {
+	margin-top: 1em;
 	border: none;
 }
 
@@ -98,6 +99,17 @@ section {
 	padding-left: 15vw;
 	padding-right: 35vw;
 }
+
+.after-intro {
+	display: none;
+}
+
+.show-options {
+	font-size: 2em;
+	float: right;
+	margin-right: 35vw;
+}
+
 
 h2 {
   color: #023D2D;
@@ -149,6 +161,7 @@ a:hover {
 	margin-bottom: .7em;
 	float: right;
 	font-size: 3em;
+	clear: both;
 }
 
 .back-page {
