@@ -1,0 +1,52 @@
+<article class = "bpost">
+  <h3 class = "title"> Sinatra Basics </h3>
+  <h4>October 5th, 2014 </h4>
+  <p>
+    Our latest project in Ada is this very page. Besides serving as a beautiful and functional way to display posts, this project has been a swift hands on introduction to:
+    <nl>
+      <li>Html</li>
+      <li>CSS</li>
+      <li>Sinatra</li>
+      <li>Jquery</li>
+    </nl>
+    <br>
+    All of which I knew nothing about two weeks ago. Out of these, I've been most intrigued by what Sinatra and Jquery can do, and of those two, I've gotten much more comfortable using Sinatra. For someone already comfortable with HTML and Ruby basics, this is a quick run through of the most important things to get about Sinatra.
+  </p>
+  <div class = "after-intro">
+  <p>
+    Let's start with these guys:
+    <pre><code>
+      &lt;% something %>
+      &lt;%= something %>
+    </code></pre>
+    <br>
+    These are the tags that indicate to the HTML to hand things over to Ruby for a while. What's important to be aware of here is what Ruby will be handing back to the HTML. Coming in from Ruby it might surprise you when:
+    <pre><code>
+      &lt;%= 5.times { print "meow " } %>
+    </code></pre>
+      simply puts "5" on your webpage. When Ruby is done with &lt;%= %>, it hands back  whatever the code has <strong>returned</strong> to the html. If you haven't written larger programs in Ruby you might be familiar with the concept of returns in the irb environment on your terminal. After running any code, the very last thing the terminal will display looks like this:
+      <pre><code>
+        => something
+      </code></pre>
+      This is what the code has returned. So if we want a bunch of meows, what we really need is this:
+      <pre><code>
+        &lt;%= "meow " * 5 %>
+        => "meow meow meow meow meow "
+      </code></pre>
+      But what is this good for besides meowing? And why would we ever want &lt;% %>, which hands the code off to Ruby, but does <strong>not</strong> display whatever is returned?
+      Here is the code I used to populate the links to blog posts on the right navigation bar.
+      <pre><code>
+        &lt;ul class ="bloglist">
+          &lt;% Post.most_recent_list.each do |path| %>
+              &lt;li> &lt;a href= &lt;%= path.url %> > &lt;%=path.title%>  &lt;/a> &lt;/li>
+          &lt;%end%>
+        &lt;/ul>
+      </code></pre>
+
+      Here I've used my Post class to load and order a list of all blog files associated with this website. The use  of &lt;% %> lets me swap between html and ruby, even within the iteration, and return fully functional links.
+  </p>
+  <p>
+    In my next post I'll briefly go over some guidelines of how variables can be used in Sinatra's routing process.
+  </p>
+  </div>
+</article>
