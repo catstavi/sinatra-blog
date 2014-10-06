@@ -10,6 +10,7 @@
 //         $('header').css('display', 'block');
 //     }
 // });
+
 $(document).ready(function () {
   if ( $('.show-options').siblings(".bpost").children(".after-intro").length > 0 ) {
     $('.show-options').click(function () {
@@ -27,7 +28,7 @@ $(document).ready(function () {
     $('.show-options').hide();
   }
 
-  if ( window.location.href.indexOf("-") > -1 ) {
+  if ( window.location.href.indexOf("posts/20") > -1) {
     $('.after-intro').show();
   }
 });
