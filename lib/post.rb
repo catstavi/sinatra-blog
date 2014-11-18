@@ -1,6 +1,6 @@
 class Post
   attr_reader :title, :url, :path, :date, :name
-  POSTS_PER_PAGE = 2
+  POSTS_PER_PAGE = 4
 
   def initialize(path)
     @path = path

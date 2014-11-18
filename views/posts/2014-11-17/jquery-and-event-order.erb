@@ -1,0 +1,61 @@
+<article class = "bpost">
+  <h3 class = "title">Jquery and Order of Events</h3>
+  <h4> November 17, 2015 </h4>
+  <p>
+    If you've started looking at javascript and jquery, you've probably noticed this format:
+    <pre><code>
+      $(function() {
+
+      });
+    </code></pre>
+
+    Here's another version that serves the same purpose, but may be easier to read:
+    <pre>
+      <code>
+        $(document).ready(function () {
+
+        });
+      </code>
+    </pre>
+  </p>
+  <div class = "after-intro">
+    <p>
+    Wrapping your code in either of these means that it will wait to execute until your DOM is ready. Without binding your code to this trigger, you will run into problems as soon as you try to interact with the page.
+    </p>
+    <p>
+      You might write some code to change the header's color when you click on it.
+      <pre>
+        <code>
+          $("h1").click(function () {
+            $(this).css("color", "red");
+          })
+        </code>
+      </pre>
+      If there are no headers on the page when this code executes, you will be disappointed.
+    </p>
+    <p>
+      It's not enough to bind everything to document ready. Sometimes you will also want to add html elements using javascript. For instance, more headers! Now you have elements that are not present even when the document is initially ready. To bind any code to events on these elements, the binding code must execute after that element is added.
+    </p>
+    <p>
+      Here is some code meant to add a new &lt;li> element to an element with id 'list'
+      <pre>
+        <code>
+            var $newLI = $("<li></li>");
+            $("#list").append($newLI);
+        </code>
+      </pre>
+      I also want to add an effect when you click on the li, changing the background color back and forth, by adding and removing a css class.
+      <pre>
+        <code>
+        $newLI.click(function() {
+            $(this).toggleClass("green");
+        });
+        </code>
+      </pre>
+      I'll order this code to execute whenever we create a new li. Be careful here to target just the specific li that you are adding, and not all present with a reference like $("li"). This method may seem to work when you add just the first li element, but will layer more and more click events each time one is created. Call $("li") in the javascript console to see that it returns all elements of that type, not just the first or most recent.
+    </p>
+    <p>
+      These have been a few basic tips to keep in mind regarding ordering when binding events in jquery.
+    </p>
+  </div>
+</article>
