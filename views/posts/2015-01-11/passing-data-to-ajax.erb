@@ -1,0 +1,121 @@
+<article class = "bpost">
+  <h3 class = "title">Passing Data to an Ajax Call</h3>
+  <h4> January 11, 2015 </h4>
+So you've just started adding Ajax to your rails app! Ajax is a great way to make your app fast and  responsive. On our feed aggregator site, we used ajax to let users subscribe to content without refreshing the page (and also without calling the same search again). Here is what that looked like:
+
+<pre>
+  <code>
+$(".search_result").click(function(e) {
+    e.preventDefault();
+    var current = $(this);
+    var current_hidden = $(current).siblings(".unsearch_result");
+    var $form = $(this).parents("form");
+    $.ajax({
+      url: "/subscriptions",
+      type: "POST",
+      data: $form.serialize(),
+      success: function() {
+          $(current_hidden).removeClass("hide");
+          $(current).addClass("hide");
+        }
+    },
+      error: function() {
+        console.log("beep");
+      },
+    });
+  });
+</code>
+</pre>
+
+On the javascript side, we have a method triggered when you click a subscription button. It first prevents the default response to the click event, which would be a standard HTTP POST request. Then it makes it's own version of the request though ajax.
+
+The ajax call communicates the form content associated with the button and makes a version of a post request to the app.
+<pre>
+  <code>
+  post "/subscriptions",         to: "subscriptions#create",    as: :subscriptions
+
+A post request to "/subscriptions" leads to the create method, which looked like this:
+<pre>
+  <code>
+  def create
+    subs_hash = params[:subscription]
+    find_or_create(subs_hash)
+    respond_to do |format|
+      format.html {render html: "success" }
+      format.js
+    end
+  end
+
+The method collects the usual form data and adds to or edits the database as needed. If it completes without error, it sends a success code back to the ajax call. Inside the "success" method, javascript switches out the subscribe/unsubscribe buttons, a visual cue to the user that their request had an effect.
+
+How to send data back to the Ajax call
+
+  In our case, some search returned users were private. It wasn't practical to prevent those users from showing up in the results, as it would involve an additional API call per user and to cover for very rare cases. So we needed an additional step, after the ajax call, but before the returned response, to determine if a user is private or not, and a way for the javascript to respond differently to each situation.
+
+Here is what the documentation has to say about the success method:
+
+A function to be called if the request succeeds. The function gets passed three arguments: <strong>The data returned from the server</strong>, formatted according to the dataType parameter or the dataFilter callback function, if specified; a string describing the status; and the jqXHR (in jQuery 1.4.x, XMLHttpRequest) object.
+
+So we'll need some changes a bit like this:
+<pre>
+  <code>
+$.ajax({
+      url: "/subscriptions",
+      type: "POST",
+      data: $form.serialize(),
+      success: function(data) {
+        //if data indicates public account:
+          $(current_hidden).removeClass("hide");
+          $(current).addClass("hide");
+        // else if data indicate private account:
+        //display message to user indicating failure
+        }
+    },
+      error: function() {
+        console.log("beep");
+      },
+    });
+  </code>
+</pre>
+
+On the other end, in the controller, we need to evaluate the account and send that data back.
+<pre>
+  <code>
+  def create
+    subs_hash = params[:subscription]
+    if subs_hash[:provider] == "instagram" && insta_user_is_private?(subs_hash[:uid])
+      acnt_status = "private"
+    else
+      acnt_status = "public"
+      find_or_create(subs_hash)
+    end
+    respond_to do |format|
+      format.html {render html: acnt_status }
+    end
+  end
+</code>
+</pre>
+Since the data we are sending here is a string, we can send it as html. The respond_to line is sensitive to the type of data a request is expecting back. So in the ajax call, let's add a dataType specifier and flesh out our checks.
+<pre>
+  <code>
+  $.ajax({
+      url: "/subscriptions",
+      type: "POST",
+      data: $form.serialize(),
+      dataType: "text",
+      success: function(data) {
+        if (data == "public") {
+          $(current_hidden).removeClass("hide");
+          $(current).addClass("hide");
+        }
+        else {
+            if ($form.children(".error-private").length === 0 ) {
+              var $error = $("<div class=error-private> Account is private </div>");
+              $form.prepend($error);
+        }
+      }
+    }
+  </code>
+</pre>
+So that's how to pass a simple variable to effect the results of your ajax call, when you need more than a simple success/error difference.
+</article>
