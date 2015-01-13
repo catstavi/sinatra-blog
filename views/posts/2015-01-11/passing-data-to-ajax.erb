@@ -1,8 +1,8 @@
 <article class = "bpost">
   <h3 class = "title">Passing Data to an Ajax Call</h3>
   <h4> January 11, 2015 </h4>
-So you've just started adding Ajax to your rails app! Ajax is a great way to make your app fast and  responsive. On our feed aggregator site, we used ajax to let users subscribe to content without refreshing the page (and also without calling the same search again). Here is what that looked like:
-
+<p>So you've just started adding Ajax to your rails app! Ajax is a great way to make your app fast and  responsive. On our feed aggregator site, we used ajax to let users subscribe to content without refreshing the page (and also without calling the same search again). Here is what that looked like:<p>
+<div class= "after-intro">
 <pre>
   <code>
 $(".search_result").click(function(e) {
@@ -78,7 +78,8 @@ $.ajax({
   </code>
 </pre>
 
-On the other end, in the controller, we need to evaluate the account and send that data back.
+On the other end, in the controller, we need to evaluate the account
+ and send that data back.
 <pre>
   <code>
   def create
@@ -95,7 +96,9 @@ On the other end, in the controller, we need to evaluate the account and send th
   end
 </code>
 </pre>
-Since the data we are sending here is a string, we can send it as html. The respond_to line is sensitive to the type of data a request is expecting back. So in the ajax call, let's add a dataType specifier and flesh out our checks.
+<p>
+  Since the data we are sending here is a string, we can send it as html. The respond_to line is sensitive to the type of data a request is expecting back. So in the ajax call, let's add a dataType specifier and flesh out our checks.
+</p>
 <pre>
   <code>
   $.ajax({
@@ -117,5 +120,8 @@ Since the data we are sending here is a string, we can send it as html. The resp
     }
   </code>
 </pre>
+<p>
 So that's how to pass a simple variable to effect the results of your ajax call, when you need more than a simple success/error difference.
+</p>  
+</div>
 </article>
